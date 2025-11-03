@@ -1,0 +1,167 @@
+/* Neutral baseline so TinyMCE HTML renders exactly as authored */
+.tinymce-content {
+  font: inherit;
+  line-height: 1.6;
+  color: inherit;
+  word-wrap: break-word;
+}
+.tinymce-content * { box-sizing: border-box; }
+
+/* --- Headings (explicit sizes; Tailwind preflight resets to inherit) --- */
+.tinymce-content h1 {
+  font-size: clamp(1.875rem, 2vw + 1.2rem, 2.25rem);
+  font-weight: 700;
+  margin: 1.2em 0 0.6em;
+  line-height: 1.2;
+}
+.tinymce-content h2 {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 1.875rem);
+  font-weight: 700;
+  margin: 1.1em 0 0.55em;
+  line-height: 1.25;
+}
+.tinymce-content h3 {
+  font-size: clamp(1.25rem, 1vw + 0.9rem, 1.5rem);
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+  line-height: 1.3;
+}
+.tinymce-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.9em 0 0.45em;
+  line-height: 1.35;
+}
+.tinymce-content h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8em 0 0.4em;
+  line-height: 1.4;
+}
+.tinymce-content h6 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin: 0.75em 0 0.35em;
+  line-height: 1.4;
+}
+
+/* Paragraphs & spacing */
+.tinymce-content p { margin: 0.8em 0; }
+
+/* --- Lists: ensure bullets/numbers render --- */
+.tinymce-content ul {
+  list-style: disc;
+  list-style-position: outside;
+  margin: 0.8em 0 0.8em 1.5em;
+  padding-left: 1em;
+}
+.tinymce-content ol {
+  list-style: decimal;
+  list-style-position: outside;
+  margin: 0.8em 0 0.8em 1.5em;
+  padding-left: 1em;
+}
+.tinymce-content li { margin: 0.25em 0; }
+
+/* --- Links: blue, underlined, accessible --- */
+.tinymce-content a {
+  color: #2563eb;                /* blue-600 */
+  text-decoration: underline;
+  cursor: pointer;
+}
+.tinymce-content a:visited { color: #2563eb; }
+.tinymce-content a:hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+.tinymce-content a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Images */
+.tinymce-content img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Blockquotes */
+.tinymce-content blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.02);
+}
+
+/* Code */
+.tinymce-content pre {
+  display: block;
+  overflow: auto;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  background: rgba(0,0,0,0.04);
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+.tinymce-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* HR */
+.tinymce-content hr {
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 1.5em 0;
+}
+
+/* Tables */
+.tinymce-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  overflow: auto;
+  display: block;
+}
+.tinymce-content th,
+.tinymce-content td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+}
+.tinymce-content th {
+  font-weight: 600;
+  background: rgba(0,0,0,0.03);
+}
+
+/* Figures */
+.tinymce-content figure { margin: 1em 0; }
+.tinymce-content figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-top: 0.4em;
+}
+
+/* Neutralize Tailwind Typography if applied somewhere above */
+.tinymce-content.prose,
+.prose .tinymce-content {
+  --tw-prose-body: inherit;
+  --tw-prose-headings: inherit;
+  --tw-prose-links: inherit;
+  --tw-prose-bold: inherit;
+  --tw-prose-counters: inherit;
+  --tw-prose-bullets: inherit;
+  --tw-prose-hr: inherit;
+  --tw-prose-quotes: inherit;
+  --tw-prose-quote-borders: inherit;
+  --tw-prose-captions: inherit;
+  --tw-prose-code: inherit;
+  --tw-prose-pre-code: inherit;
+  --tw-prose-th-borders: inherit;
+  --tw-prose-td-borders: inherit;
+}
